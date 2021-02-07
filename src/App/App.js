@@ -1,0 +1,46 @@
+import React, {Component} from "react";
+import Header from './Header/Header';
+import Main from './Main/Main';
+import Footer from './Footer/Footer';
+
+import '../common/style/reset.css'
+import '../common/style/base.css'
+
+
+
+
+class App extends Component {
+  state = {
+    cartData: {
+      count: 100,
+      price: 1000,
+    },
+  };
+  constructor(props) {
+    super(props);
+  }
+
+  AddToCard = (props)=> {
+    this.setState((prevState) => ( 
+      {
+      cartData: {
+        count: prevState.count + this.state.count,
+        price: prevState.price + this.state.count*this.state.price,
+      },
+    }));
+  };
+
+  render() {
+    return (
+      <>
+        <Header cartData={this.state.cartData} />
+        <Main AddToCard={this.AddToCard} />
+        <Footer />
+      </>
+    );
+  }
+}
+
+
+export default App 
+
