@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import "./ProductListItem.css";
 import PropTypes from 'prop-types'; 
-import ProductList from "./ProductList.js";
+// import ProductList from "./ProductList.js";
 
 
 class ProductListItem extends Component {
   state = {
     productCount: 1,
   };
-  constructor(props) {
-    super(props);
-  }
+
   clickAdd = () => {
     this.props.AddToCard();
   };
@@ -56,6 +54,7 @@ class ProductListItem extends Component {
         </div>
 
         <div className="product-price">${price}</div>
+        <div className="product-price">All:${price*this.state.productCount}</div>
         <div
           // =========
 

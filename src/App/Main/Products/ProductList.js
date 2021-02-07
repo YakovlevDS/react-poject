@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import ProductListItem from './ProductListItem';
 import products from './products';
-import Main from '../Main.js';
+// import Main from '../Main.js';
 
 
 
 class ProductList extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     return (
       <>

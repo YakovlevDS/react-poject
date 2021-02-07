@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import ProductList from './Products/ProductList';
-import App from "../App.js";
+// import App from "../App.js";
 
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <main className="main">

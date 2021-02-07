@@ -16,16 +16,15 @@ class App extends Component {
       price: 1000,
     },
   };
-  constructor(props) {
-    super(props);
-  }
 
-  AddToCard = (props)=> {
-    this.setState((prevState) => ( 
-      {
+  AddToCard = () => {
+    // console.log(produts.);
+    this.setState((prevState) => ({
       cartData: {
-        count: prevState.count + this.state.count,
-        price: prevState.price + this.state.count*this.state.price,
+      // count: 1000,
+      // price: 10000,
+      count:prevState.count + this.state.count,
+      price: prevState.price + this.state.count * this.state.price,
       },
     }));
   };
