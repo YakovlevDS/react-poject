@@ -8,10 +8,16 @@ class ProductListItem extends Component {
   state = {
     productCount: 1,
   };
-
-  clickAdd = () => {
-    this.props.AddToCard();
-  };
+  clickAdd() {
+    // console.log(this.props.price, this.state.productCount);
+    const a = this.state.productCount;
+    const b = this.props.price;
+    console.log(a, b);
+    //  this.props.AddProductToCard(a, b);
+    // this.props.AddToCard = () => {
+    //   (a, b);
+    // }
+  }
   onIncrementClick = () => {
     this.setState((prevState) => ({
       productCount: prevState.productCount + 1,
@@ -54,11 +60,13 @@ class ProductListItem extends Component {
         </div>
 
         <div className="product-price">${price}</div>
-        <div className="product-price">All:${price*this.state.productCount}</div>
+        <div className="product-price">
+          All:${price * this.state.productCount}
+        </div>
         <div
           // =========
 
-          onClick={this.clickAdd}
+          onClick={() => this.clickAdd(this.state.productCount, price)}
           //  ========
           className="btn-add-to-cart"
         >
