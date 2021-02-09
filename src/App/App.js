@@ -6,27 +6,32 @@ import '../common/style/reset.css'
 import '../common/style/base.css'
 class App extends Component {
   state = {
-    cartData: {
-      count: 0,
-      price: 0,
+    productsInCart:{
+      id:0,
+      count:0,
     }
   }
-  AddProductToCard = (count, price) => {
+  
+  AddProductToCard = (count, id) => {
+// console.log(count, id);
+// console.log(this.state.productsInCart.count,this.state.productsInCart.id)
     this.setState((prevState) => ({
-      cartData: {
-        count: prevState.cartData.count + count,
-        price: prevState.cartData.price + (count*price),
+      productsInCart: {
+        id:prevState.productsInCart.id===id?prevState.productsInCart.id:id,
+        count:this.state.productsInCart.id===id?prevState.productsInCart.count+count:count,
       }
     }))
   }
   render() {
     return (
       <>
-        <Header cartData={this.state.cartData} />
+        <Header 
+         productsInCart={this.state.productsInCart}
+         />
         <Main AddProductToCard={this.AddProductToCard} />
         <Footer />
       </>
-    );
+    )
   }
 }
 export default App 

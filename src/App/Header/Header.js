@@ -6,9 +6,8 @@ import './header.css'
 import './Menu/menu.css'
 import './Cart/cart.css'
 const Header = ({
-	cartData
+	productsInCart
 }) => {
-	console.log(cartData)
   return (
     <header className="header">
       <div className="container">
@@ -21,8 +20,8 @@ const Header = ({
           </div>
           <div className="col-lg-3">
             <Cart
-              count={cartData.count}
-              price={cartData.price}
+              count={productsInCart.count}
+              id={productsInCart.id}
             />
           </div>
         </div>

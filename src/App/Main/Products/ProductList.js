@@ -18,6 +18,7 @@ const ProductList =({AddProductToCard,})=>
                   capacity={capacity}
                   price={price}
                   image={image}
+                  id={id}
                 />
               </div>
             )

@@ -16,7 +16,7 @@ class ProductListItem extends Component {
     }));
   };
   render() {
-    const {name, description, type, capacity, price, image, AddProductToCard } = this.props;
+    const {id, name, description, type, capacity, price, image, AddProductToCard } = this.props;
     return (
       <div className="product-list-item">
         <div className="product-img">
@@ -48,7 +48,7 @@ class ProductListItem extends Component {
           All:${price * this.state.productCount}
         </div>
         <div
-          onClick={() => AddProductToCard(this.state.productCount, price)}
+          onClick={() => AddProductToCard(this.state.productCount, id)}
           className="btn-add-to-cart"
         >
           Add to cart
