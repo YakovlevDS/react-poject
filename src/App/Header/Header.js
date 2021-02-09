@@ -5,12 +5,10 @@ import Cart from './Cart/Cart';
 import './header.css'
 import './Menu/menu.css'
 import './Cart/cart.css'
-
 const Header = ({
 	cartData
 }) => {
 	console.log(cartData)
-	
   return (
     <header className="header">
       <div className="container">

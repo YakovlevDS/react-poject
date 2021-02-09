@@ -4,7 +4,6 @@ import Main from './Main/Main';
 import Footer from './Footer/Footer';
 import '../common/style/reset.css'
 import '../common/style/base.css'
-
 class App extends Component {
   state = {
     cartData: {
@@ -12,7 +11,7 @@ class App extends Component {
       price: 0,
     }
   }
-  AddProductToCard = (count, price)  {
+  AddProductToCard = (count, price) => {
     this.setState((prevState) => ({
       cartData: {
         count: prevState.cartData.count + count,
@@ -24,7 +23,6 @@ class App extends Component {
     return (
       <>
         <Header cartData={this.state.cartData} />
-        <button onClick={()=>this.AddProductToCard(2, 1000)}>Add to Card</button>
         <Main AddProductToCard={this.AddProductToCard} />
         <Footer />
       </>

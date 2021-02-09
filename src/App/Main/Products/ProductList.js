@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import ProductListItem from './ProductListItem';
 import products from './products';
-// import Main from '../Main.js';
-
-
-
-class ProductList extends Component {
-
-  render() {
+const ProductList =({AddProductToCard,})=> 
+  {
     return (
       <>
         <h2 className="page-title">Products List</h2>
@@ -16,7 +11,7 @@ class ProductList extends Component {
             ({ id, name, description, type, capacity, price, image }) => (
               <div className="col-lg-6" key={id}>
                 <ProductListItem
-                  AddToCard={this.props.AddToCard}
+                  AddProductToCard={AddProductToCard}
                   name={name}
                   description={description}
                   type={type}
@@ -29,9 +24,9 @@ class ProductList extends Component {
           )}
         </div>
       </>
-    );
+    )
   }
-}
+
 
 
 

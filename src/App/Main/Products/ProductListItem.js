@@ -1,38 +1,22 @@
 import React, { Component } from "react";
 import "./ProductListItem.css";
 import PropTypes from 'prop-types'; 
-// import ProductList from "./ProductList.js";
-
-
 class ProductListItem extends Component {
   state = {
     productCount: 1,
   };
-  clickAdd() {
-    // console.log(this.props.price, this.state.productCount);
-    const a = this.state.productCount;
-    const b = this.props.price;
-    console.log(a, b);
-    //  this.props.AddProductToCard(a, b);
-    // this.props.AddToCard = () => {
-    //   (a, b);
-    // }
-  }
   onIncrementClick = () => {
     this.setState((prevState) => ({
       productCount: prevState.productCount + 1,
     }));
   };
-
   onDecrementClick = () => {
     this.setState((prevState) => ({
       productCount: prevState.productCount - 1,
     }));
   };
-
   render() {
-    const { name, description, type, capacity, price, image } = this.props;
-
+    const {name, description, type, capacity, price, image, AddProductToCard } = this.props;
     return (
       <div className="product-list-item">
         <div className="product-img">
@@ -64,10 +48,7 @@ class ProductListItem extends Component {
           All:${price * this.state.productCount}
         </div>
         <div
-          // =========
-
-          onClick={() => this.clickAdd(this.state.productCount, price)}
-          //  ========
+          onClick={() => AddProductToCard(this.state.productCount, price)}
           className="btn-add-to-cart"
         >
           Add to cart
@@ -76,16 +57,13 @@ class ProductListItem extends Component {
     );
   }
 }
-
-
 ProductListItem.propTypes = {
   name:PropTypes.string.isRequired,
   description:PropTypes.string,
   type:PropTypes.string.isRequired,
   capacity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
- image: PropTypes.string,
-      
+ image: PropTypes.string,    
 }
 ProductListItem.defaultProps = {
   description: "No description...  ",
