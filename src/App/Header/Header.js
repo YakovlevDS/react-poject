@@ -5,21 +5,21 @@ import Cart from "./Cart/Cart";
 import "./header.css";
 import "./Menu/menu.css";
 import "./Cart/cart.css";
+import { Route } from "react-router-dom";
+
 const Header = ({ productsInCart }) => {
   return (
     <header className="header">
       <div className="container">
         <div className="row">
           <div className="col-lg-3">
-            <Logo />
+            <Route path="/" component={Logo} />
           </div>
           <div className="col-lg-6">
-            <Menu />
+            <Menu/>
           </div>
           <div className="col-lg-3">
-            <Cart
-              productsInCart={productsInCart}
-            />
+            <Cart productsInCart={productsInCart} />
           </div>
         </div>
       </div>
