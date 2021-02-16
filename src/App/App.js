@@ -7,33 +7,28 @@ import '../common/style/base.css'
 class App extends Component {
   state = {
     productsInCart: {
-      id: 0,
-      count: 0,
-    }
-  }
+      1:0,
+      3:4,
+    },
+  };
 
-  AddProductToCard = (count, id) => {
-this.setState((prevState) => ({
-  productsInCart: {
-    id: prevState.productsInCart.id === id ? prevState.productsInCart.id : id,
-    count:
-      this.state.productsInCart.id === id
-        ? prevState.productsInCart.count + count
-        : count,
-  },
-}));
-  }
+  AddProductToCard = (id, count) => {
+    this.setState((prevState) => ({
+      productsInCart: {
+        ...prevState.productsInCart,
+        [id]: (prevState.productsInCart[id] || 0) + count,
+      },
+    }));
+  };
   render() {
     return (
       <>
-        <Header 
-         productsInCart={this.state.productsInCart}
-         />
+        <Header productsInCart={(this.state.productsInCart)} />
+
         <Main AddProductToCard={this.AddProductToCard} />
         <Footer />
       </>
-    )
+    );
   }
 }
-export default App 
-
+export default App

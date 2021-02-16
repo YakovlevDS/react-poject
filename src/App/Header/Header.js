@@ -1,13 +1,11 @@
 import React from "react";
-import Logo from './Logo/Logo';
-import Menu from './Menu/Menu';
-import Cart from './Cart/Cart';
-import './header.css'
-import './Menu/menu.css'
-import './Cart/cart.css'
-const Header = ({
-	productsInCart
-}) => {
+import Logo from "./Logo/Logo";
+import Menu from "./Menu/Menu";
+import Cart from "./Cart/Cart";
+import "./header.css";
+import "./Menu/menu.css";
+import "./Cart/cart.css";
+const Header = ({ productsInCart }) => {
   return (
     <header className="header">
       <div className="container">
@@ -20,15 +18,13 @@ const Header = ({
           </div>
           <div className="col-lg-3">
             <Cart
-              count={productsInCart.count}
-              id={productsInCart.id}
+              productsInCart={productsInCart}
             />
           </div>
         </div>
       </div>
     </header>
   );
-}
+};
 
 export default Header
- 

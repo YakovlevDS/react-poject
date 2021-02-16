@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ProductListItem.css";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
 class ProductListItem extends Component {
   state = {
     productCount: 1,
@@ -16,7 +16,16 @@ class ProductListItem extends Component {
     }));
   };
   render() {
-    const {id, name, description, type, capacity, price, image, AddProductToCard } = this.props;
+    const {
+      id,
+      name,
+      description,
+      type,
+      capacity,
+      price,
+      image,
+      AddProductToCard,
+    } = this.props;
     return (
       <div className="product-list-item">
         <div className="product-img">
@@ -48,7 +57,7 @@ class ProductListItem extends Component {
           All:${price * this.state.productCount}
         </div>
         <div
-          onClick={() => AddProductToCard(this.state.productCount, id)}
+          onClick={() => AddProductToCard(id, this.state.productCount)}
           className="btn-add-to-cart"
         >
           Add to cart
@@ -58,15 +67,16 @@ class ProductListItem extends Component {
   }
 }
 ProductListItem.propTypes = {
-  name:PropTypes.string.isRequired,
-  description:PropTypes.string,
-  type:PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  type: PropTypes.string.isRequired,
   capacity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
- image: PropTypes.string,    
-}
+  image: PropTypes.string,
+};
 ProductListItem.defaultProps = {
   description: "No description...  ",
-  image: "https://lh3.googleusercontent.com/proxy/U7BUKb6Y8H9WcBYhO4RT9Vc41-PaHHjipz1a386pN7Xw_os6QBbOYrznYhM9YpZtkWM0jTmz9pT-VM_XSKr38g",
-}
-export default ProductListItem 
+  image:
+    "https://lh3.googleusercontent.com/proxy/U7BUKb6Y8H9WcBYhO4RT9Vc41-PaHHjipz1a386pN7Xw_os6QBbOYrznYhM9YpZtkWM0jTmz9pT-VM_XSKr38g",
+};
+export default ProductListItem;

@@ -1,41 +1,44 @@
-import React from "react";
-const Cart = ({
-	count,
-	id,
-}) => {
-  const listItem = [
-    {
-      id: 0,
-      count: 0,
-    },
-   
-  ];
-	if (id !== 0) {
-		listItem.forEach((ob) => {
-			if (ob.id == 0) {
-				listItem.splice(0, 1);
-			}
-			if (ob.id == id) {
-				ob.count = ob.count + count
-			}
-			if (ob.id !== id) {
-			
-				
-				listItem.push({ id: id, count: count });
-				
-      }
-		})
-	}
-  // console.log(listItem);
-  return (
-    <div className="cart text-center">
-      {listItem.map(({ id, count }) => (
-        <div className="products-count">
-          {id} : {count}
-        </div>
-      ))}
-    </div>
-  );
-}
+import React, {Component} from "react"
+import { keys } from "lodash"
+import "./cart.css"
+import products from "../../Main/Products/products"
+import { render } from "@testing-library/react"
 
-export default Cart 
+
+class Cart extends Component(props){
+   state = {
+    total: 1,
+  }
+  addTotal = () => {
+    this.setState((prevState) => ({
+      total: { keys(props).map(
+            (id) => (total = this.prevState.total + products[id - 1].price * this.props[id])
+          )
+      },
+    }));
+  };
+  render()
+  {
+    return (
+      <div className="cart text-center">
+        {keys(productsInCart).map((id) => (
+          <div key={id}>
+            {products[id - 1].name} : {productsInCart[id]} items :
+         amount {products[id - 1].price * productsInCart[id]}$
+          </div>
+        ))}
+      Total: {this.state.total}
+$;
+      </div>
+    );
+  }
+}
+export default Cart
+
+
+// {
+          // keys(productsInCart).map(
+          //   (id) => (total = total + products[id - 1].price * productsInCart[id])
+          // )
+//         }
+
