@@ -6,7 +6,8 @@ const products = [
         type:"phone",
         capacity:64,
         price:500,
-        image:"images/iphone.png",
+        image: "images/iphone.png",
+        fullDescription:'<div class="red">Hello world</div>',
     },
     {
         id:2,

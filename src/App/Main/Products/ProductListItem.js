@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import "./ProductListItem.css"
 import Quantity from '../../../Components/Quantity/Quantity'
-
+import ProductList from './ProductList'
+import {Link} from 'react-router-dom'
 class ProductListItem extends Component {
 
 
@@ -39,7 +40,7 @@ class ProductListItem extends Component {
                 <div className="product-img">
                     <img src={image} alt={name} />
                 </div>
-                <div className="product-title">{name}</div>
+                <div className="product-title"><Link to={`/products/${id}`}>{name}</Link></div>
                 <div className="product-description">{description}</div>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Capacity: {capacity}Gb</div>
