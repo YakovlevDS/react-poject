@@ -1,30 +1,33 @@
-import React from "react";
-import Logo from "./Logo/Logo";
-import Menu from "./Menu/Menu";
-import Cart from "./Cart/Cart";
-import "./header.css";
-import "./Menu/menu.css";
-import "./Cart/cart.css";
-import { Route } from "react-router-dom";
+import React from 'react'
 
-const Header = ({ productsInCart }) => {
-  return (
-    <header className="header">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-3">
-            <Route path="/" component={Logo} />
-          </div>
-          <div className="col-lg-6">
-            <Menu/>
-          </div>
-          <div className="col-lg-3">
-            <Cart productsInCart={productsInCart} />
-          </div>
-        </div>
-      </div>
-    </header>
-  );
-};
+import './header.css'
+
+import Logo from './Logo/Logo'
+import Menu from './Menu/Menu'
+import Cart from './Cart/Cart'
+
+const Header = ({
+    productsInCart
+}) => {
+    return (
+        <header className="header">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-3">
+                        <Logo/>
+                    </div>
+                    <div className="col-lg-6">
+                        <Menu/>
+                    </div>
+                    <div className="col-lg-3">
+                        <Cart 
+                            productsInCart={productsInCart}
+                        />
+                    </div>
+                </div>
+            </div>
+        </header>
+    )
+}
 
 export default Header

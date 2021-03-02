@@ -21,7 +21,6 @@
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 15px;
-
 }
 .product-type,.product-screen-size,.product-capacity {
     margin-bottom: 15px;
@@ -37,7 +36,6 @@
     display: block;
     color:white;
     border: 1px solid white;
-    text-align: center;
 }
 .btn-add-to-cart:hover {
     cursor: pointer;
@@ -48,34 +46,28 @@
     text-align: center;
     margin: 10px 0;
 }
+
 .product-img {
     margin-bottom: 15px;
     padding: 15px 0;
     text-align: center;
-    background-color: rgb(255, 255, 255, 0.75);
-   
-}
-.product-img img {
- max-width: 390px;
-    max-height: 102px;
+    background-color: rgba(255,255,255,0.75);
 }
 .product-quantity {
     text-align: center;
     margin-bottom: 15px;
-    
 }
-.product-quantity button{
+.product-quantity button {
     width: 30px;
     height: 30px;
     cursor: pointer;
 }
-.product-quantity input{
+.product-quantity input {
     height: 30px;
-     text-align: center;
+    text-align: center;
 }
-.product-quantity button:hover{
-  color: white;
+.product-quantity button:hover {
     background-color: grey;
-    border: none;
-    
+    color:white;
+    border:none;
 }
